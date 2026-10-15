@@ -1,0 +1,40 @@
+$color-text: #252525;
+$color-background: #f7f7f7;
+
+* {
+    margin: 0;
+    color: $color-text;
+    background: $color-background;
+    font-family: Arial, sans-serif;
+}
+
+.products-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.product-card {
+    padding: 20px;
+    background: #fff;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+    }
+
+    h2 {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
