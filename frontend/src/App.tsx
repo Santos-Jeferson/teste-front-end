@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { ProductCard } from './components/ProductCard';
-import { getProducts } from './services/products';
+import { getProducts } from './services/Products';
+import { Header } from './components/Header'
+import { HeroBanner } from './components/HeroBanner';
 import type { Product } from './types/Product';
+
 
 type LoadStatus = "loading" | "ready" | "error";
 
@@ -30,21 +33,25 @@ function App() {
   }, []);
 
   return (
-    <main>
-      <section className="products-section" arial-labelledby="products-title">
-        <h1 id="products-title">Produtos relacionados</h1>
+    <>
+      <Header />
+      <HeroBanner />
+      <main>
+        <section className="products-section" arial-labelledby="products-title">
+          <h1 id="products-title">Produtos relacionados</h1>
 
-        {status === "loading" && <p>Carregando produtos...</p>}
-        {status === "error" && (<p>Não foi possível carregar os produtos.</p>)}
-        {status === "ready" && (
-          <ul className="products-grid">
-            {products.map((product) => (
-              <ProductCard key={product.productName} product={product} />
-            ))}
-          </ul>
-        )}
-      </section>
-    </main>
+          {status === "loading" && <p>Carregando produtos...</p>}
+          {status === "error" && (<p>Não foi possível carregar os produtos.</p>)}
+          {status === "ready" && (
+            <ul className="products-grid">
+              {products.map((product) => (
+                <ProductCard key={product.productName} product={product} />
+              ))}
+            </ul>
+          )}
+        </section>
+      </main>
+    </>
   );
 }
 

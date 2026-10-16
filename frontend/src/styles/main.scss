@@ -1,11 +1,19 @@
+@use "./home";
+
 $color-text: #252525;
 $color-background: #f7f7f7;
 
-* {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
+    font-family: 'Poppins', sans-serif;
     color: $color-text;
     background: $color-background;
-    font-family: Arial, sans-serif;
 }
 
 .products-section {

@@ -1,0 +1,228 @@
+$purple: #3019b2;
+$yellow: #f7ca11;
+$gray: #9f9f9f;
+$dark: #271c47;
+
+.site-header {
+    background: #fff;
+
+    &__benefits {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 119px;
+        max-width: 1280px;
+        height: 32px;
+        margin: auto;
+        color: $gray;
+        font-size: 12px;
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        strong {
+            color: $purple;
+            font-weight: 600;
+        }
+    }
+
+    &__main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: 1280px;
+        height: 72px;
+        margin: auto;
+    }
+
+    &__logo {
+        display: block;
+        width: 139px;
+        height: auto;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        width: min(100%, 630px);
+        height: 48px;
+        padding: 0 24px 0 16px;
+        border-radius: 10px;
+        background: #f6f5f2;
+
+        input {
+            flex: 1;
+            min-width: 0;
+            border: 0;
+            outline: none;
+            background: transparent;
+            font: inherit;
+            font-size: 14px;
+
+            &::placeholder {
+                color: $gray;
+            }
+        }
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        flex-shrink: 0;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
+        img:not(:first-child) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__navigation {
+        max-width: 1280px;
+        margin: auto;
+        box-shadow: 0 8px 16px rgba(57, 48, 19, 0.12);
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            height: 40px;
+            margin: 0;
+            padding: 0 69px;
+            list-style: none;
+        }
+
+        li {
+            color: $gray;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .is-active {
+            color: $purple;
+        }
+    }
+
+    &__subscription {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.hero-banner {
+    display: flex;
+    align-items: center;
+    min-height: 390px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.65), transparent 75%), url('/assets/hero-banner.png') center / cover no-repeat;
+
+    &__content {
+        width: min(1280px, calc(100% - 40px));
+        margin: auto;
+    }
+
+    h1 {
+        max-width: 780px;
+        margin: 0 0 16px;
+        color: #fff;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 50px;
+    }
+
+    p {
+        margin: 0 0 32px;
+        color: #fff;
+        font-size: 32px;
+
+        strong {
+            color: $yellow;
+            font-weight: 700;
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 206px;
+        height: 50px;
+        border-radius: 5px;
+        background: $yellow;
+        color: $dark;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            filter: brightness(0.95);
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .site-header {
+        &__benefits {
+            gap: 16px;
+            padding: 8px;
+            height: auto;
+            flex-wrap: wrap;
+        }
+
+        &__main {
+            height: auto;
+            padding: 16px 20px;
+            flex-wrap: wrap;
+        }
+
+        &__navigation {
+            overflow-x: auto;
+
+            ul {
+                min-width: max-content;
+                padding: 0 20px;
+            }
+        }
+    }
+
+    .hero-banner {
+        min-height: 360px;
+
+        h1 {
+            font-size: clamp(30px, 6vw, 48px);
+            line-height: 1.15;
+        }
+
+        p {
+            font-size: clamp(20px, 4vw, 32px);
+        }
+    }
+}
