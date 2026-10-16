@@ -1,6 +1,6 @@
 export function HeroBanner() {
     return (
-        <section className="hero-banner" arial-labelledby="hero-title">
+        <section className="hero-banner" aria-labelledby="hero-title">
             <div className="hero-banner__content">
                 <h1 id="hero-title">Venha conhecer nossas promoções</h1>
 

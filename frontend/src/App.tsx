@@ -37,8 +37,8 @@ function App() {
       <Header />
       <HeroBanner />
       <main>
-        <section className="products-section" arial-labelledby="products-title">
-          <h1 id="products-title">Produtos relacionados</h1>
+        <section className="products-section" aria-labelledby="products-title">
+          <h2 id="products-title">Produtos relacionados</h2>
 
           {status === "loading" && <p>Carregando produtos...</p>}
           {status === "error" && (<p>Não foi possível carregar os produtos.</p>)}
