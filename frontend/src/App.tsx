@@ -3,6 +3,7 @@ import { ProductCard } from './components/ProductCard';
 import { getProducts } from './services/Products';
 import { Header } from './components/Header'
 import { HeroBanner } from './components/HeroBanner';
+import { Categories } from './components/Categories'
 import type { Product } from './types/Product';
 
 
@@ -35,8 +36,13 @@ function App() {
   return (
     <>
       <Header />
-      <HeroBanner />
+      
+
       <main>
+
+        <HeroBanner />
+        <Categories />
+        
         <section className="products-section" aria-labelledby="products-title">
           <h2 id="products-title">Produtos relacionados</h2>
 
