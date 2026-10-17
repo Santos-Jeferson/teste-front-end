@@ -2,6 +2,7 @@ import type { Product } from '../types/Product';
 
 interface ProductsCardProps {
     product: Product;
+    onSelect: (product: Product) => void;
 }
 
 const priceFormatter = new Intl.NumberFormat('pt-BR', {
@@ -9,7 +10,7 @@ const priceFormatter = new Intl.NumberFormat('pt-BR', {
     currency: 'BRL',
 });
 
-export function ProductCard({ product }: ProductsCardProps) {
+export function ProductCard({ product, onSelect }: ProductsCardProps) {
     return (
         <li className="product-card">
             <img
@@ -18,8 +19,15 @@ export function ProductCard({ product }: ProductsCardProps) {
                 loading="lazy"
             />
 
-            <h2>{product.productName}</h2>
-            <strong>{priceFormatter.format(product.price)}</strong>
+            <p className="product-card__name">
+                {product.productName}
+            </p>
+
+            <strong className="product-card__price">
+                {priceFormatter.format(product.price)}
+            </strong>
+
+            <button type="button" className="product-card__button" onClick={() => onSelect(product)} > COMPRAR </button>
         </li>    
     );
 }

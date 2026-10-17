@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
-import { ProductCard } from './components/ProductCard';
 import { getProducts } from './services/Products';
 import { Header } from './components/Header'
 import { HeroBanner } from './components/HeroBanner';
 import { Categories } from './components/Categories'
 import type { Product } from './types/Product';
+import { ProductShowcase } from './components/ProductShowcase'
+import { ProductModal } from './components/ProductModal';
+
 
 
 type LoadStatus = "loading" | "ready" | "error";
 
 function App() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
   const [status, setStatus] = useState<LoadStatus>("loading");
 
@@ -33,30 +36,39 @@ function App() {
       return () => controller.abort();
   }, []);
 
+  
   return (
     <>
       <Header />
-      
 
       <main>
-
         <HeroBanner />
         <Categories />
-        
-        <section className="products-section" aria-labelledby="products-title">
-          <h2 id="products-title">Produtos relacionados</h2>
 
-          {status === "loading" && <p>Carregando produtos...</p>}
-          {status === "error" && (<p>Não foi possível carregar os produtos.</p>)}
-          {status === "ready" && (
-            <ul className="products-grid">
-              {products.map((product) => (
-                <ProductCard key={product.productName} product={product} />
-              ))}
-            </ul>
-          )}
-        </section>
+        {status === "loading" && (
+          <p>Carregando produtos...</p>
+        )}
+
+        {status === "error" && (
+          <p role="alert">
+            Não foi possível carregar os produtos.
+          </p>
+        )}
+
+        {status === "ready" && (
+          <ProductShowcase
+            products={products}
+            onSelect={setSelectedProduct}
+          />
+        )}
       </main>
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </>
   );
 }
