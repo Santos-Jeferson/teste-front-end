@@ -34,7 +34,7 @@ export function Footer () {
                         />
 
                         <p className="site-footer__description">
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </p>
 
                         <ul className="site-footer__social" aria-label="Redes sociais">
