@@ -59,18 +59,21 @@ return (
           Não foi possível carregar os produtos.
         </p>
       )}
-
-      {status === "ready" && (
+      <div id="products-title">
+        {status === "ready" && (
         <ProductShowcase
           products={products}
           onSelect={setSelectedProduct}
         />
       )}
+      </div>
+      
 
       <PartnerBanners />
 
       {status === "ready" && (
-        <ProductShowcase products={products} 
+        <ProductShowcase 
+        products={products} 
         onSelect={setSelectedProduct} 
         showCategories={false}
         />
@@ -81,7 +84,8 @@ return (
       <Brands />
 
       {status === "ready" && (
-        <ProductShowcase products={products} 
+        <ProductShowcase 
+        products={products} 
         onSelect={setSelectedProduct} 
         showCategories={false}
         />

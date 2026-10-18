@@ -10,7 +10,7 @@ const categories = [
 
 export function Categories() {
     return (
-        <section className="categories" aria-labelledby="Compre por categoria">
+        <section className="categories" aria-label="Compre por categoria">
             <ul className="categories__list">
                 {categories.map((category, index) => (
                     <li key={category.name} className={`category${index === 0 ? " category--featured" : ""}`} >
