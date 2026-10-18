@@ -67,14 +67,15 @@ return (
 
       <PartnerBanners />
 
+      <PartnerBanners />
+
+      <Brands />
+
       {status === "ready" && (
         <ProductShowcase products={products} onSelect={setSelectedProduct} showCategories={false}
         />
       )}
 
-      <PartnerBanners />
-
-      <Brands />
     </main>
 
     {selectedProduct && (
