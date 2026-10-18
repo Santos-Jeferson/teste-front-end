@@ -1,31 +1,141 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
 
-### Vem ser #Econverse!
+# Teste Front-End Jr | Econverse
 
-Segue abaixo as instruções para a execução do teste.
+Projeto desenvolvido como parte do processo seletivo para a vaga de Desenvolvedor Front-End Jr na Econverse.
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail gustavo.cipriano@econverse.com.br com o título **Teste Vaga FrontEnd**
+O objetivo é reproduzir a página Home disponibilizada no Figma, utilizando React, TypeScript e Sass, com vitrines de produtos alimentadas por dados JSON e um modal interativo para visualização das informações de cada produto.
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+## Tecnologias utilizadas
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+- React
+- TypeScript
+- Vite
+- Sass (SCSS)
+- HTML5 semântico
+- CSS3 (Flexbox, Grid e Media Queries)
+- Fetch API
+- Git e GitHub
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+## Funcionalidades
 
-**Boa sorte! ;)**
+- Página Home baseada no layout do Figma
+- Cabeçalho com navegação e barra de pesquisa
+- Banner principal e categorias de produtos
+- Vitrines com carrosséis horizontais
+- Carregamento de produtos a partir de JSON
+- Modal com informações do produto selecionado
+- Banners de parceiros
+- Seção de navegação por marcas
+- Newsletter demonstrativa com validação de campos
+- Rodapé institucional com redes sociais
+- Layout adaptável para diferentes tamanhos de tela
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+Para executar a aplicação, é necessário ter instalado:
+
+- Node.js compatível com a versão do Vite utilizada
+- npm
+- Git (para clonar o repositório)
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/Santos-Jeferson/teste-front-end.git
+```
+
+Acesse a pasta da aplicação:
+
+```bash
+cd teste-front-end/frontend
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+Abra no navegador o endereço informado pelo Vite no terminal.
+
+## Comandos disponíveis
+
+| Comando | Descrição |
+|---------|-----------|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Compila o projeto para produção |
+| `npm run preview` | Visualiza a versão de produção |
+| `npm run lint` | Executa a análise estática com ESLint |
+
+## Dados dos produtos
+
+Os dados são carregados a partir do arquivo JSON disponibilizado para o teste técnico da Econverse.
+
+O arquivo está localizado em:
+
+`frontend/public/data/products.json`
+
+O carregamento é realizado utilizando a Fetch API, com tratamento para estados de carregamento e possíveis erros.
+
+Cada produto apresenta as seguintes informações:
+
+- Nome
+- Imagem
+- Descrição resumida
+- Preço
+
+Ao clicar em **COMPRAR**, é exibido um modal contendo as principais informações do produto selecionado.
+
+## Organização do projeto
+
+```text
+frontend/
+├── public/
+│   ├── assets/
+│   └── data/
+│       └── products.json
+├── src/
+│   ├── components/
+│   ├── services/
+│   ├── styles/
+│   ├── types/
+│   ├── App.tsx
+│   └── main.tsx
+├── package.json
+└── vite.config.ts
+```
+
+A aplicação foi organizada em componentes reutilizáveis, buscando facilitar a manutenção, a leitura e a evolução do código.
+
+## Validação e testes
+
+Foram utilizadas as ferramentas de análise e compilação disponíveis no projeto:
+
+- ESLint para verificação estática do código
+- TypeScript para verificação de tipos
+- Vite para geração da versão de produção
+
+O projeto foi compilado com sucesso utilizando `npm run build`, e a análise com `npm run lint` foi concluída sem erros.
+
+## Observações técnicas
+
+- O projeto foi desenvolvido sem bibliotecas prontas de interface, como Bootstrap ou Material UI.
+- O formulário de newsletter é demonstrativo e não realiza cadastros em um serviço externo.
+- Alguns elementos visuais não possuem navegação externa, pois seus destinos não foram fornecidos no desafio.
+- Ferramentas de IA também foram utilizadas como apoio na revisão do código, identificação de erros e avaliação de ajustes técnicos.
+
+## Autor
+
+**Jeferson Oliveira dos Santos**
+
+GitHub: https://github.com/Santos-Jeferson
