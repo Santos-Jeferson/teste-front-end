@@ -7,20 +7,20 @@ export function Newsletter() {
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        setMessage ("Formulário de demonstração. Nenhuma incrição foi enviada.");
+        setMessage ("Formulário de demonstração. Nenhuma inscrição foi enviada.");
     }
 
     return (
-        <section className="newletter"
+        <section className="newsletter"
         aria-labelledby="newsletter-title">
 
             <div className="newsletter__inner">
                 <div className="newsletter__content">
                     <h2 id="newsletter-title">
-                        Inscreva-se na nossa newslatter
+                        Inscreva-se na nossa newsletter
                     </h2>
 
-                    <p>Assine a nossa newslatter e receba as novidade e conteúdos exclusivos a Econverse.</p>
+                    <p>Assine a nossa newsletter e receba as novidade e conteúdos exclusivos a Econverse.</p>
                 </div>
 
                 <form className="newsletter__form" onSubmit={handleSubmit}>
@@ -38,7 +38,7 @@ export function Newsletter() {
                         />
                         
 
-                        <label className="newsletter_sr-only" htmlFor="newsletter-email"> E-mail </label>
+                        <label className="newsletter__sr-only" htmlFor="newsletter-email"> E-mail </label>
                         <input
                         id="newsletter-email"
                         type="email"

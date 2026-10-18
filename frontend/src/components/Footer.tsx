@@ -69,7 +69,7 @@ export function Footer () {
                 </div>
             </div>
 
-            <div className="site-footer__buttom">
+            <div className="site-footer__bottom">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             </div>
         </footer>
