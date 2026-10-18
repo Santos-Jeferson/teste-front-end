@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import type { Product } from "../types/Product";
 
@@ -16,7 +17,10 @@ export function ProductModal({
   onClose,
 }: ProductModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+
   const [quantity, setQuantity] = useState(1);
+  const [showDetails, setShowDetails] = useState(false);
+  const [purchaseMessage, setPurchaseMessage] = useState("");
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -28,12 +32,22 @@ export function ProductModal({
 
   function handleDecrease() {
     setQuantity((previousQuantity) =>
-      previousQuantity > 1 ? previousQuantity - 1 : 1
+      Math.max(1, previousQuantity - 1)
     );
+    setPurchaseMessage("");
   }
 
   function handleIncrease() {
     setQuantity((previousQuantity) => previousQuantity + 1);
+    setPurchaseMessage("");
+  }
+
+  function handleBuy() {
+    const unitText = quantity === 1 ? "unidade" : "unidades";
+
+    setPurchaseMessage(
+      `Demonstração: ${quantity} ${unitText} selecionada(s). Nenhum pedido foi realizado.`
+    );
   }
 
   return (
@@ -62,7 +76,9 @@ export function ProductModal({
         </div>
 
         <div className="product-modal__info">
-          <h2 id="product-modal-title">{product.productName}</h2>
+          <h2 id="product-modal-title">
+            {product.productName}
+          </h2>
 
           <strong className="product-modal__price">
             {priceFormatter.format(product.price)}
@@ -72,9 +88,28 @@ export function ProductModal({
             {product.descriptionShort}
           </p>
 
-          <a href="#" className="product-modal__details">
-            Veja mais detalhes do produto &gt;
-          </a>
+          <button
+            type="button"
+            className="product-modal__details"
+            aria-expanded={showDetails}
+            aria-controls="product-modal-extra"
+            onClick={() => setShowDetails((previous) => !previous)}
+          >
+            {showDetails
+              ? "Ocultar detalhes"
+              : "Veja mais detalhes do produto >"}
+          </button>
+
+          {showDetails && (
+            <p
+              id="product-modal-extra"
+              className="product-modal__extra"
+            >
+              O catálogo disponibiliza nome, descrição resumida
+              e preço. Não foram fornecidas especificações
+              adicionais para este produto.
+            </p>
+          )}
 
           <div className="product-modal__actions">
             <div className="product-modal__quantity">
@@ -82,6 +117,7 @@ export function ProductModal({
                 type="button"
                 aria-label="Diminuir quantidade"
                 onClick={handleDecrease}
+                disabled={quantity === 1}
               >
                 −
               </button>
@@ -100,10 +136,20 @@ export function ProductModal({
             <button
               type="button"
               className="product-modal__buy"
+              onClick={handleBuy}
             >
               COMPRAR
             </button>
           </div>
+
+          {purchaseMessage && (
+            <p
+              className="product-modal__notice"
+              role="status"
+            >
+              {purchaseMessage}
+            </p>
+          )}
         </div>
       </div>
     </dialog>

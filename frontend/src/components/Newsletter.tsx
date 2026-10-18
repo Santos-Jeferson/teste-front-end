@@ -20,7 +20,10 @@ export function Newsletter() {
                         Inscreva-se na nossa newsletter
                     </h2>
 
-                    <p>Assine a nossa newsletter e receba as novidade e conteúdos exclusivos da Econverse.</p>
+                    <p>
+                    Assine a nossa newsletter e receba as novidades
+                    e conteúdos exclusivos da Econverse.
+                    </p>
                 </div>
 
                 <form className="newsletter__form" onSubmit={handleSubmit}>
