@@ -38,47 +38,43 @@ function App() {
   }, []);
 
   
-  return (
-    <>
-      <Header />
+  
+return (
+  <>
+    <Header />
 
-      <main>
-        <HeroBanner />
-        <Categories />
+    <main>
+      <HeroBanner />
+      <Categories />
 
-        {status === "loading" && (
-          <p>Carregando produtos...</p>
-        )}
+      {status === "loading" && (
+        <p>Carregando produtos...</p>
+      )}
 
-        {status === "error" && (
-          <p role="alert">
-            Não foi possível carregar os produtos.
-          </p>
-        )}
-
-        {status === "ready" && (
-          <ProductShowcase
-            products={products}
-            onSelect={setSelectedProduct}
-          />
-        )}
-      </main>
-
-      {selectedProduct && (
-        <ProductModal
-          product={selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
+      {status === "error" && (
+        <p role="alert">
+          Não foi possível carregar os produtos.
+        </p>
       )}
 
       {status === "ready" && (
-        <ProductShowcase products={products} onSelect={setSelectedProduct}
+        <ProductShowcase
+          products={products}
+          onSelect={setSelectedProduct}
         />
       )}
 
       <PartnerBanners />
-    </>
-  );
+    </main>
+
+    {selectedProduct && (
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
+    )}
+  </>
+);
 }
 
 export default App;

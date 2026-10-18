@@ -1,28 +1,34 @@
+
 const banners = ["partner-one", "partner-two"];
 
 export function PartnerBanners() {
-    return(
-        <section className="partner-banner" aria-label="Destaques de parceiros">
+  return (
+    <section
+      className="partner-banners"
+      aria-label="Destaques de parceiros"
+    >
+      {banners.map((banner) => (
+        <article className="partner-banner" key={banner}>
+          <img
+            className="partner-banner__image"
+            src="/assets/partner-banner.png"
+            alt=""
+            loading="lazy"
+          />
 
-            {banners.map((banner) => (
-            <article className="partner-banner" key={banner}>
+          <div className="partner-banner__content">
+            <h2>Parceiros</h2>
 
-                <img className="parner-banner__image"
-                src="/assets/partner-banner.png"
-                alt=""
-                loading="lazy" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur
+            </p>
 
-                <div className="partner-banner__content">
-                    <h2>Parceiros</h2>
-                
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>  
-
-                    <span className="partner-banner__cta">
-                    CONFIRA
-                    </span> 
-                </div>
-            </article>
-        ))}
-        </section>
-    );
+            <span className="partner-banner__cta">
+              CONFIRA
+            </span>
+          </div>
+        </article>
+      ))}
+    </section>
+  );
 }
