@@ -6,6 +6,7 @@ import { Categories } from './components/Categories'
 import type { Product } from './types/Product';
 import { ProductShowcase } from './components/ProductShowcase'
 import { ProductModal } from './components/ProductModal';
+import { PartnerBanners } from './components/PartnerBanners';
 
 
 
@@ -69,6 +70,13 @@ function App() {
           onClose={() => setSelectedProduct(null)}
         />
       )}
+
+      {status === "ready" && (
+        <ProductShowcase products={products} onSelect={setSelectedProduct}
+        />
+      )}
+
+      <PartnerBanners />
     </>
   );
 }

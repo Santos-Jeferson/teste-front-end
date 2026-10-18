@@ -23,7 +23,7 @@
             align-items: center;
             justify-content: center;
             min-height: 40px;
-            border: 1px solif #bdbdbd;
+            border: 1px solid #bdbdbd;
             background: #fff;
             color: #3b3b3b;
             font-size: 16px;
@@ -167,7 +167,7 @@
         background: rgba(0, 0, 0, 0.6);
     }
 
-    &_close {
+    &__close {
         display: block;
         margin-left: auto;
         border: 0;

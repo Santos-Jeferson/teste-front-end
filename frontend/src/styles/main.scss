@@ -1,6 +1,7 @@
 @use "./home";
 @use "./categories";
 @use "./products";
+@use "./partners";
 
 $color-text: #252525;
 $color-background: #f7f7f7;
@@ -16,20 +17,6 @@ body {
     font-family: 'Poppins', sans-serif;
     color: $color-text;
     background: $color-background;
-}
-
-.products-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 32px 20px;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 0;
-    list-style: none;
 }
 
 .product-card {
