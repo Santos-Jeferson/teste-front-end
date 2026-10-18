@@ -1,0 +1,128 @@
+.newsletter {
+    background: #271c47;
+    color: #fff;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: minmax(0, 515px) minmax(0, 639px);
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        width: min(1280px, calc(100% - 40px));
+        min-height: 162px;
+        margin: 0 auto;
+        padding: 24px 0;
+    }
+
+    &__content {
+        h2{
+            margin: 0 0 8px;
+            font-family: "Outfit", sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+        }
+    }
+
+    &__fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr 157px;
+        gap: 8px;
+
+        input {
+            width: 100%;
+            min-width: 0;
+            height: 42px;
+            padding: 0 24px;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+            background: #fff;
+            color: #3f3f40;
+            font: inherit;
+            font-size: 14px;
+
+            &::placeholder {
+                color: #676767;
+            }
+        }
+
+        button {
+            height: 42px;
+            border: 0;
+            border-radius: 8px;
+            background: #f7ca11;
+            color: #161615;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+                background: #e7bb00;
+            }
+        }
+    }
+
+    &__terms {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+        font-size: 14px;
+        cursor: pointer;
+
+        input {
+            width: 15px;
+            height: 15px;
+            margin: 0;
+            accent-color: #f7ca11;
+        }
+    }
+
+    &__message {
+        margin: 8px 0 0;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    &__sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1000px) {
+    .newsletter__inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .newsletter {
+        &__content h2 {
+            font-size: 26px;
+        }
+
+        &__fields {
+            grid-template-columns: 1fr;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+

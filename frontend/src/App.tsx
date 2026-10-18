@@ -8,6 +8,8 @@ import { ProductShowcase } from './components/ProductShowcase'
 import { ProductModal } from './components/ProductModal';
 import { PartnerBanners } from './components/PartnerBanners';
 import { Brands } from './components/Brands';
+import { Newsletter } from './components/Newsletter'
+import { Footer } from './components/Footer'
 
 
 
@@ -67,16 +69,28 @@ return (
 
       <PartnerBanners />
 
+      {status === "ready" && (
+        <ProductShowcase products={products} 
+        onSelect={setSelectedProduct} 
+        showCategories={false}
+        />
+      )}
+
       <PartnerBanners />
 
       <Brands />
 
       {status === "ready" && (
-        <ProductShowcase products={products} onSelect={setSelectedProduct} showCategories={false}
+        <ProductShowcase products={products} 
+        onSelect={setSelectedProduct} 
+        showCategories={false}
         />
       )}
 
     </main>
+
+    <Newsletter />
+    <Footer />
 
     {selectedProduct && (
       <ProductModal

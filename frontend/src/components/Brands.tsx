@@ -2,7 +2,7 @@ const brands = [1, 2, 3, 4, 5];
 
 export function Brands () {
     return (
-        <section className="brands" aria-labellebdy="brands-title">
+        <section className="brands" aria-labelledby="brands-title">
 
             <h2 id="brands-title">Navegue por marcas</h2>
 
@@ -11,7 +11,7 @@ export function Brands () {
                     <li className="brands__item" key={brand}>
                         <img 
                         src="/assets/logo.svg" 
-                        alt="Ecoverse" 
+                        alt="Econverse" 
                         width="117" 
                         height="35" 
                         loading="lazy" 
