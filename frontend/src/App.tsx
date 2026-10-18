@@ -7,6 +7,7 @@ import type { Product } from './types/Product';
 import { ProductShowcase } from './components/ProductShowcase'
 import { ProductModal } from './components/ProductModal';
 import { PartnerBanners } from './components/PartnerBanners';
+import { Brands } from './components/Brands';
 
 
 
@@ -65,6 +66,15 @@ return (
       )}
 
       <PartnerBanners />
+
+      {status === "ready" && (
+        <ProductShowcase products={products} onSelect={setSelectedProduct} showCategories={false}
+        />
+      )}
+
+      <PartnerBanners />
+
+      <Brands />
     </main>
 
     {selectedProduct && (
